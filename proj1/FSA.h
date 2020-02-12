@@ -28,8 +28,7 @@
 class FSA {
 public:
     FSA(std::ifstream &ifs);
-    /// Disallow 0-param ctor
-    FSA() = delete;
+    FSA() = delete;                 // disallow 0-param ctor
     void describe();
     void trace(const std::string& in_string);
     /**
@@ -37,13 +36,10 @@ public:
      */
     template <typename T> int indexOf(const std::vector<T> list, const T element);
 private:
-    /// Alphabet
-    std::string sigma;
-    /// Number of states
-    int num_states;
+    std::string sigma;               // alphabet
+    int num_states;                  // number of states
     int start_state;
     std::vector<int> accept_states;
-    std::vector< std::vector<int> > state_table;
+    std::vector<std::vector<int>> state_table;
     void get_state_table(std::ifstream &ifs);
 };
-
