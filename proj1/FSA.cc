@@ -24,39 +24,32 @@ using namespace std;
  @param ifs An ifstream reference
  */
 FSA::FSA(ifstream &ifs) {
-    /// Initialized String variable representing the alphabet
-    string alphabet;
-    
-    // Read the input
-    ifs >> alphabet;
-    
-    // Iterate throuch each character
-    for (char character: alphabet) {
-        // And append the character to the
-        sigma.push_back(character);
+    /// Initialized String value casted to sigma vector
+    string char_states;
+    // Read
+    ifs >> char_states;
+    // Iterate through the character states and append it to the vector
+    for (char ch: char_states) {
+        sigma.push_back(ch);
     }
-    
-    /**
-     Here, we determine the potential number of states
-     */
+    // Get the number of states
     ifs >> num_states;
+    // Gett the start state
     ifs >> start_state;
     
-    /// Initialized Int value representing the number of acceptable values
-    int numberOfAccepts;
-    /// Read the input
-    ifs >> numberOfAccepts;
+    /**
+     (1) )Get how many accept states there are; (2) read the accept states through temp; (3) append them to ```accept_states```
+     */
+    int num_accepts;
+    int temp;
     
-    /// Iterate through the values
-    for (int i = 0; i < numberOfAccepts; i ++) {
-        /// Initialized Int storing the state
-        int state;
-        ifs >> state;
-        // Append the state
-        accept_states.push_back(state);
+    ifs >> num_accepts;
+    for (int i = 0; i < num_accepts; i++) {
+        ifs >> temp;
+        accept_states.push_back(temp);
     }
     
-    // Read the table data once we've finished storing the state
+    // Get the state table
     get_state_table(ifs);
 }
 

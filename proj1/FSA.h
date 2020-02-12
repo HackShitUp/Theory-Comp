@@ -40,6 +40,6 @@ private:
     int num_states;                  // number of states
     int start_state;
     std::vector<int> accept_states;
-    std::vector<std::vector<int>> state_table;
+    std::vector<std::vector<int> > state_table;
     void get_state_table(std::ifstream &ifs);
 };

@@ -24,3 +24,15 @@ nano name_of_file.extension
 ```
 _You may also use the command ```touch``` to create a new file._
 Visit this link to learn more[https://openclassrooms.com/en/courses/4614926-learn-the-command-line-in-terminal/4634381-move-and-copy-items-in-your-system].
+
+
+## Executing Locally — Mac OS LLVM/Clang
+To execute the program locally, ```cd``` to the project source and compile the program first with the _Makefile_:
+```
+make clean
+make
+```
+An executable will build. To run it:
+```
+./NameOfExecutable [Parameter; If any]
+```
