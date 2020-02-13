@@ -35,6 +35,7 @@ public:
      Modified by Josh Choi
      */
     template <typename T> int indexOf(const std::vector<T> list, const T element);
+//    template <typename T> void print2DListAtIndex(const std::vector<<T>> list, const T i);
 private:
     std::string sigma;               // alphabet
     int num_states;                  // number of states

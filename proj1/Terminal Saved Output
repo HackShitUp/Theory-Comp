@@ -1,3 +1,6 @@
+Joshuas-MBP:proj1 JoshMChoi$ pwd
+/Users/JoshMChoi/desktop/theory-comp/proj1
+Joshuas-MBP:proj1 JoshMChoi$ cat FSA.cc
 //
 //  FSA.cc
 //  Project1
@@ -152,3 +155,57 @@ template <typename T> int FSA::indexOf(const vector<T> list, const T element) {
     auto i = std::find(list.begin(), list.end(), element);
     return i == list.end() ? -1 : int(i - list.begin());
 }
+Joshuas-MBP:proj1 JoshMChoi$ make clean
+Joshuas-MBP:proj1 JoshMChoi$ make
+c++ -Wall -std=c++17    -c -o proj1.o proj1.cc
+c++ -Wall -std=c++17    -c -o FSA.o FSA.cc
+g++ -o proj1 -Wall -std=c++17  proj1.o FSA.o
+Joshuas-MBP:proj1 JoshMChoi$ ./proj1 data1
+called stub version of FSA constructor
+called stub version of get_state_table()
+FSA description:
+called stub version of describe()
+
+***Describing the FSA...***
+• Alphabet: ab
+• N-Number of States: 3
+• Start State: 1
+• N-Number of Accept States: 1
+2 
+• State Table:
+    a    b    
+    0
+    0
+    2
+    1
+
+Enter input strings, one line at a time:
+? ab
+called stub version of trace()
+State: 1 State: 2 State: 3 
+########
+"ab" Is Invalid.
+Please Try Again.
+########
+? aabb
+called stub version of trace()
+State: 1 State: 2 State: 3 State: 1 State: 1 
+########
+"aabb" Is Invalid.
+Please Try Again.
+########
+? aabba
+called stub version of trace()
+State: 1 State: 2 State: 3 State: 1 State: 1 State: 2 
+########
+"aabba" Is Valid!
+########
+? aabbaa
+called stub version of trace()
+State: 1 State: 2 State: 3 State: 1 State: 1 State: 2 State: 3 
+########
+"aabbaa" Is Invalid.
+Please Try Again.
+########
+? ^C
+Joshuas-MBP:proj1 JoshMChoi$ 
